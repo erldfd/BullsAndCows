@@ -277,6 +277,7 @@ void UHUDWidget::ReadyHudForGameStart()
 	SetActiveGuestReadyText(false);
 	SetActiveScoreBoardOverlay(true);
 	SetActiveWinText(false);
+	SetActiveReadyButton(false);
 
 	ClearHistoryView();
 }
