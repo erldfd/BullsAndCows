@@ -126,6 +126,12 @@ void ABNC_GameMode::WinGame(bool bIsHostWinner)
 	}
 
 	TerminateTimer();
+
+	for (AChatPlayerController* PlayerController : TActorRange<AChatPlayerController>(GetWorld()))
+	{
+		PlayerController->SendBullsAndCowsTextToAllClient(FString::Printf(TEXT("정답은 <Yellow>%s</>"), *Answer));
+		return;
+	}
 }
 
 void ABNC_GameMode::StartTimer()
